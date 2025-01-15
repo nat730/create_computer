@@ -1,0 +1,26 @@
+@local=http://localhost:3000/api
+
+POST {{local}}/computer
+Content-Type: application/json
+
+{
+    "name": "computer1",
+    "motherboard": 1,
+    "battery": 1,
+    "processor": 1,
+    "ram": [1,2]
+}
+###
+GET {{local}}/computer
+###
+PUT {{local}}/computer/1
+
+{
+    "name": "computer1",
+    "motherboardId": 1,
+    "batteryId": 1,
+    "processorId": 1,
+    "ramId": 1
+}
+###
+DELETE {{local}}/computer/1

@@ -1,0 +1,25 @@
+@local=http://localhost:3000/api
+
+POST {{local}}/ram
+Content-Type: application/json
+
+{
+    "name": "ram5",
+    "type": "DDR4",
+    "capacity": 8,
+    "frequency": 2400,
+    "price": 100
+}
+###
+GET {{local}}/ram/1
+###
+PUT {{local}}/ram/1
+
+{
+    "name": "ram1",
+    "capacity": 8,
+    "frequency": 2400,
+    "price": 100
+}
+###
+DELETE {{local}}/ram/1

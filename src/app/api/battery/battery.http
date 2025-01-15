@@ -1,0 +1,24 @@
+@local=http://localhost:3000/api
+
+POST {{local}}/battery
+Content-Type: application/json
+
+{
+    "name": "battery2",
+    "capacity": 100,
+    "voltage": 10,
+    "price": 100
+}
+###
+Get {{local}}/battery
+###
+PUT {{local}}/battery/1
+
+{
+    "name": "battery1",
+    "capacity": 100,
+    "voltage": 10,
+    "price": 100
+}
+###
+DELETE {{local}}/battery/1

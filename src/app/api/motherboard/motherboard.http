@@ -1,0 +1,22 @@
+@local=http://localhost:3000/api
+
+POST {{local}}/motherboard
+Content-Type: application/json
+
+{
+    "name": "motherboard1",
+    "brand": "brand1",
+    "price": 100
+}
+###
+GET {{local}}/motherboard
+###
+PUT {{local}}/motherboard/1
+
+{
+    "name": "motherboard1",
+    "brand": "brand1",
+    "price": 100
+}
+###
+DELETE {{local}}/motherboard/1
