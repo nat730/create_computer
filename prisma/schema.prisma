@@ -19,14 +19,7 @@ model battery {
 model motherboard {
   id        Int        @id @default(autoincrement())
   name      String     @unique
-  size      Float
-  format    String
-  socket    String
-  ram       String
-  usbSlots  Int
-  ethernet  Boolean
-  wifi      Boolean
-  bluetooth Boolean
+  brand     String
   price     Float
   Computer  Computer[]
 }

@@ -7,14 +7,7 @@ export const POST = async (request: NextRequest): Promise<any> => {
         const newMotherBoard = await prisma.motherboard.create({
             data: {
                 name: body.name,
-                size: body.size,
-                format: body.format,
-                socket: body.socket,
-                ram: body.ram,
-                usbSlots: body.usbSlots,
-                ethernet: body.ethernet,
-                wifi: body.wifi,
-                bluetooth: body.bluetooth,
+                brand: body.brand,
                 price: body.price,
             }
         })

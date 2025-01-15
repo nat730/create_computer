@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server"
 
 export const POST = async (request: NextRequest): Promise<any> => {
     const body = await request.json();
-    if (body) {
+    if (body.name && body.motherboard && body.Battery && body.processor && body.ram) {
         const newComputer = await prisma.computer.create({
             data: {
                 name: body.name,
