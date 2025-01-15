@@ -1,0 +1,65 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model battery {
+  id       Int        @id @default(autoincrement())
+  name     String     @unique
+  capacity Float
+  voltage  Float
+  price    Float
+  Computer Computer[]
+}
+
+model motherboard {
+  id        Int        @id @default(autoincrement())
+  name      String     @unique
+  size      Float
+  format    String
+  socket    String
+  ram       String
+  usbSlots  Int
+  ethernet  Boolean
+  wifi      Boolean
+  bluetooth Boolean
+  price     Float
+  Computer  Computer[]
+}
+
+model processor {
+  id        Int        @id @default(autoincrement())
+  name      String     @unique
+  cores     Int
+  threads   Int
+  frequency Float
+  price     Float
+  Computer  Computer[]
+}
+
+model ram {
+  id        Int        @id @default(autoincrement())
+  name      String     @unique
+  type      String
+  capacity  Float
+  frequency Float
+  price     Float
+  Computer  Computer[]
+}
+
+model Computer {
+  id            Int         @id @default(autoincrement())
+  name          String      @unique
+  motherboardId Int
+  motherboard   motherboard @relation(fields: [motherboardId], references: [id])
+  batteryId     Int
+  battery       battery     @relation(fields: [batteryId], references: [id])
+  processorId   Int
+  processor     processor   @relation(fields: [processorId], references: [id])
+  ramId         Int
+  ram           ram         @relation(fields: [ramId], references: [id])
+}
