@@ -53,6 +53,5 @@ model Computer {
   battery       battery     @relation(fields: [batteryId], references: [id])
   processorId   Int
   processor     processor   @relation(fields: [processorId], references: [id])
-  ramId         Int
-  ram           ram         @relation(fields: [ramId], references: [id])
+  rams          ram[]
 }
