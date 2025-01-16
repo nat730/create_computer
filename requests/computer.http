@@ -6,7 +6,7 @@ Content-Type: application/json
 {
     "name": "computer1",
     "motherboard": 1,
-    "battery": 1,
+    "battery": 6,
     "processor": 1,
     "ram": [1,2]
 }
@@ -18,7 +18,7 @@ PUT {{local}}/computer/1
 {
     "name": "computer1",
     "motherboardId": 1,
-    "batteryId": 1,
+    "batteryId": 6,
     "processorId": 1,
     "ramId": 1
 }
