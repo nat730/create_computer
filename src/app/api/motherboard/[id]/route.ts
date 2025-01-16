@@ -13,15 +13,15 @@ export const GET = async (request: NextRequest): Promise<NextResponse> => {
         return NextResponse.json({ error: "ID is required" }, { status: 400 });
     }
 
-    const ram = await prisma.ram.findUnique({
+    const motherboard = await prisma.motherboard.findUnique({
         where: {
             id: parseInt(id),
         },
     });
 
-    if (!ram) {
-        return NextResponse.json({ error: "RAM not found" }, { status: 404 });
+    if (!motherboard) {
+        return NextResponse.json({ error: "motherboard not found" }, { status: 404 });
     }
 
-    return NextResponse.json(ram);
+    return NextResponse.json(motherboard);
 };
